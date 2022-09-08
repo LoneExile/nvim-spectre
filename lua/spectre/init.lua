@@ -105,7 +105,7 @@ M.open = function(opts)
         end
     end
     if state.bufnr == nil or is_new then
-        vim.cmd(state.user_config.open_cmd)
+       pcall(vim.cmd, state.user_config.open_cmd)
     else
         if state.query.path ~= nil
             and #state.query.path > 1
